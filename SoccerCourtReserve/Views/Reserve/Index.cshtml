@@ -1,0 +1,28 @@
+﻿@model IEnumerable<EFCoreCodeFirstSample.Models.Court>
+@{
+    ViewData["Title"] = "Reserve Page";
+
+}
+
+
+<div class="text-center">
+    <h1 class="display-4">You can Select Here the Court</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+
+            @foreach (var court in Model)
+            {
+                <th scope="col">@court.CourtId</th>
+            }
+        </tr>
+    </thead>
+    <tbody>
+            @await Component.InvokeAsync("ReserveTable")
+    </tbody>
+</table>
+
